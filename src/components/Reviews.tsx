@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
+import { FaGoogle, FaFacebookF } from "react-icons/fa";
 import { Reveal } from "./Reveal";
+
+const GOOGLE_REVIEW_URL =
+  "https://search.google.com/local/writereview?placeid=ChIJC3MtAgkFoQERnVehFQheoU0";
+const FACEBOOK_REVIEW_URL =
+  "https://www.facebook.com/share/18m4GNUVJW/?mibextid=wwXIfr";
 
 const reviews = [
   {
@@ -64,6 +70,42 @@ export function Reviews() {
             </motion.div>
           ))}
         </div>
+
+        <Reveal delay={0.1}>
+          <div className="mt-12 md:mt-16 bg-brand-cream border border-brand-green-dark/10 p-6 sm:p-8 md:p-10 text-center max-w-3xl mx-auto">
+            <p className="text-xs uppercase tracking-widest font-bold text-brand-gold mb-3">
+              Worked with us?
+            </p>
+            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl text-brand-green-dark mb-3 [text-wrap:balance]">
+              Leave us a review.
+            </h3>
+            <p className="text-brand-text/80 text-sm sm:text-base font-medium max-w-xl mx-auto mb-6">
+              A few honest words from neighbors like you help other Middle Tennessee families find a crew they can trust. Thank you.
+            </p>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
+              <a
+                href={GOOGLE_REVIEW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Leave a review on Google (opens in a new tab)"
+                className="inline-flex items-center justify-center gap-2 bg-brand-green-dark text-brand-cream font-bold uppercase tracking-widest text-xs sm:text-sm px-6 py-4 hover:bg-brand-green transition-colors"
+              >
+                <FaGoogle aria-hidden="true" size={16} />
+                Review on Google
+              </a>
+              <a
+                href={FACEBOOK_REVIEW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Leave a review on Facebook (opens in a new tab)"
+                className="inline-flex items-center justify-center gap-2 bg-brand-cream text-brand-green-dark border-2 border-brand-green-dark font-bold uppercase tracking-widest text-xs sm:text-sm px-6 py-4 hover:bg-brand-green-dark hover:text-brand-cream transition-colors"
+              >
+                <FaFacebookF aria-hidden="true" size={16} />
+                Review on Facebook
+              </a>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
