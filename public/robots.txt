@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://lvl3tech.github.io/adams-lawn-service/sitemap.xml
